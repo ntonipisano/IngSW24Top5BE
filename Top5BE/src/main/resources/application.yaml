@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: IngSW24Top5BE
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: 28112002
+    url: jdbc:mysql://localhost:3306/locutentiemappe
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto:
+        update
+      dialect:
+        org.hibernate.dialect.MySQL8Dialect
