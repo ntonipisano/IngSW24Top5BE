@@ -5,7 +5,7 @@ import org.springframework.web.client.RestClient;
 @SpringBootApplication
 public class LocalEventi {
 
-    static String uriBaseMock = "http://localhost:3001/posizionevento";
+    static String uriBaseMock = "http://localhost:3001";
     public static String callREST(String resourceName, String uriBase, boolean useMock) {
         RestClient restClient = RestClient.create();
         /*
@@ -13,8 +13,6 @@ public class LocalEventi {
          */
         if(useMock)
             uriBase = uriBaseMock;
-
-        System.out.println(uriBase+resourceName);
 
         return restClient.get()
                 .uri(uriBase + resourceName)

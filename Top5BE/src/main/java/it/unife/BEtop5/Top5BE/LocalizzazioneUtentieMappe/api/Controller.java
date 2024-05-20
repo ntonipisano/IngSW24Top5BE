@@ -19,6 +19,6 @@ public class Controller {
 
     @RequestMapping("/callREST") /* Annotation per definire il path del metodo (relativo alla classe)  */
     public String callRest() {
-        return LocalEventi.callREST("http://localhost:3001/posizionevento", null, true);
+        return LocalEventi.callREST("/posizionevento", null, true);
     }
 }
