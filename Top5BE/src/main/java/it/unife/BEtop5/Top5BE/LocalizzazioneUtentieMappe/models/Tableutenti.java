@@ -1,11 +1,11 @@
 package it.unife.BEtop5.Top5BE.LocalizzazioneUtentieMappe.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.Getter;
 
 @Entity
 @Table(name = "utenti")
@@ -13,9 +13,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
+@Getter
+@Setter
 public class Tableutenti {
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idutente;
+    private String nomeutente;
     private double latitudine;
     private double longitudine;
 }
