@@ -14,6 +14,7 @@ public class EventoSaveService {
     private Repoeventi eventoRepository;
 
     public void saveEventi(String eventiJson) {
+
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             EventoDTO[] eventiDTO = objectMapper.readValue(eventiJson, EventoDTO[].class);

@@ -3,7 +3,7 @@ spring:
     name: IngSW24Top5BE
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    password: ciao
+    password: 28112002
     url: jdbc:mysql://localhost:3306/locutentiemappe
     username: root
   jpa:

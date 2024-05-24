@@ -14,6 +14,7 @@ public class UtenteSaveService {
     private Repoutenti utenteRepository;
 
     public void saveUtenti(String utentiJson) {
+
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             UtenteDTO[] utentiDTO = objectMapper.readValue(utentiJson, UtenteDTO[].class);
