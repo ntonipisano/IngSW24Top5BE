@@ -10,24 +10,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController /* Annotation per definire che la classe risponderà tramite rest  */
+@RestController /* Annotation per definire che la classe risponderà tramite rest */
 @RequestMapping("/api") /* Annotation per definire il path della classe  */
 
 public class Controller {
 
-    //Endpoint /callRESTevento che fa la chiamata REST e stampa a video il risultato
     @Autowired
     private LocalEventi localeventi;
+
+    /* Annotation per definire il path del metodo (relativo alla classe) che restituisce la posizione degli eventi */
     @GetMapping("/callRESTevento") /* Annotation per definire il path del metodo (relativo alla classe)  */
     public String callRestevento() {
         return LocalEventi.callREST("/posizionevento", null, true);
     }
 
-    //Endpoint /importEvents che fa la chiamata REST, stampa a video il risultato e salva i dati sul database
     @Autowired
     private EventoSaveService eventoSaveService;
+
+    /* Annotation per definire il path del metodo (relativo alla classe) che importa la posizione degli eventi sul database e li stampa */
     @GetMapping("/importEvents")
     public String importEvents() {
+        /* Chiama il servizio REST per ottenere le info sugli eventi, se la risposta non è nulla salva, poi stampa il risultato */
         String eventiJson = LocalEventi.callREST("/posizionevento", null, true);
         if (eventiJson != null) {
             eventoSaveService.saveEventi(eventiJson);
@@ -35,19 +38,22 @@ public class Controller {
         return eventiJson;
     }
 
-    //Endpoint /callRESTutente che fa la chiamata REST e stampa a video il risultato
     @Autowired
     private LocalUtenti localutenti;
+
+    /* Annotation per definire il path del metodo (relativo alla classe) che restituisce la posizione degli utenti */
     @GetMapping("/callRESTutente") /* Annotation per definire il path del metodo (relativo alla classe)  */
     public String callRestutente() {
         return LocalUtenti.callREST("/utente", null, true);
     }
 
-    //Endpoint /importUsers che fa la chiamata REST, stampa a video il risultato e salva i dati sul database
     @Autowired
     private UtenteSaveService utenteSaveService;
+
+    /* Annotation per definire il path del metodo (relativo alla classe) che importa la posizione degli utenti sul database e li stampa */
     @GetMapping("/importUsers")
     public String importUsers() {
+        /* Chiama il servizio REST per ottenere le info sugli utenti, se la risposta non è nulla salva, poi stampa il risultato */
         String utentiJson = LocalUtenti.callREST("/utente", null, true);
         if (utentiJson != null) {
             utenteSaveService.saveUtenti(utentiJson);
