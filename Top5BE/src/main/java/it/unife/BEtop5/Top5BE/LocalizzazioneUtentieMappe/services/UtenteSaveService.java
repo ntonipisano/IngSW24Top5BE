@@ -30,7 +30,7 @@ public class UtenteSaveService {
                 utente.setLatitudine(Double.parseDouble(dto.getLatitudine()));
                 utente.setLongitudine(Double.parseDouble(dto.getLongitudine()));
 
-                /* Salvataggio oggetto evento sul database tramite repository */
+                /* Salvataggio oggetto utente sul database tramite repository */
                 utenteRepository.save(utente);
             }
         } catch (Exception e) {
