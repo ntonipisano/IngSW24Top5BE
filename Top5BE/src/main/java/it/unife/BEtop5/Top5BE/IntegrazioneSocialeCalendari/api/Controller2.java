@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController /* Annotation per definire che la classe risponderà tramite rest */
 @RequestMapping("/api") /* Annotation per definire il path della classe  */
 
-public class Controller {
+public class Controller2 {
     @Autowired
     private IntegCalend integCalend;
 

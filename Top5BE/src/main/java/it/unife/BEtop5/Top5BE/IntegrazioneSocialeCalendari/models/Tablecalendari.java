@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
 /* Modello della tabella utenti
  * Le annotation indicano che questa classe è un entity bean,
  * mappa una tabella che ha un nome fisico "calendario",
@@ -27,4 +26,9 @@ public class Tablecalendari {
     private String nomevento;
     private String descrizionevento;
     private String dataevento;
+
+    /* Metodo setDescrizionevento*/ 
+    public void setDescrizonevento(String descrizionevento) {
+        this.descrizionevento=descrizionevento;
+    }
 }
