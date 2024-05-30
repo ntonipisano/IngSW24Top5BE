@@ -15,7 +15,7 @@ public class Controller2 {
     @Autowired
     private IntegCalend integCalend;
 
-    /* Annotation per definire il path del metodo (relativo alla classe) che restituisce le informazioni sulle date degli eventi */
+    /* Annotation per definire il path del metodo (relativo alla classe) che restituisce le informazioni sugli eventi */
     @GetMapping("/callRESTcalendario") /* Annotation per definire il path del metodo (relativo alla classe)  */
     public String callRestcalendario() {
         return IntegCalend.callREST("/infoeventi", null, true);
@@ -27,7 +27,7 @@ public class Controller2 {
     /* Annotation per definire il path del metodo (relativo alla classe) che importa le informazioni sugli eventi nel database e li stampa */
     @GetMapping("/importCalendar")
     public String importCalendar() {
-        /* Chiama il servizio REST per ottenere le info sugli eventi, se la risposta non è nulla salva, poi stampa il risultato */
+        /* Chiama il servizio REST per ottenere le informazioni sugli eventi , se la risposta non è nulla salva, poi stampa il risultato */
         String calendariJson = IntegCalend.callREST("/infoeventi", null, true);
         if (calendariJson != null) {
             calendarioSaveService.saveCalendari(calendariJson);

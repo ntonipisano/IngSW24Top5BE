@@ -14,7 +14,7 @@ public class CalendarioSaveService {
     @Autowired
     private Repocalendari calendarioRepository;
 
-    /* Metodo che salva gli eventi sul database a partire da una stringa JSON */
+    /* Metodo che salva le informazioni sugli eventi sul database a partire da una stringa JSON */
     public void saveCalendari(String calendariJson) {
 
         try {
@@ -24,13 +24,13 @@ public class CalendarioSaveService {
             CalendarioDTO[] calendariDTO = objectMapper.readValue(calendariJson, CalendarioDTO[].class);
 
             for (CalendarioDTO dto : calendariDTO) {
-                /* Creazione oggetto evento e popolamento dei suoi attributi */
+                /* Creazione oggetto calendario e popolamento dei suoi attributi */
                 Tablecalendari calendario = new Tablecalendari();
                 calendario.setNomevento(dto.getNomevento());
                 calendario.setDescrizonevento(dto.getDescrizionevento());
                 calendario.setDataevento(dto.getDataevento());
 
-                /* Salvataggio oggetto evento sul database tramite repository */
+                /* Salvataggio oggetto calendario sul database tramite repository */
                 calendarioRepository.save(calendario);
             }
         } catch (Exception e) {
