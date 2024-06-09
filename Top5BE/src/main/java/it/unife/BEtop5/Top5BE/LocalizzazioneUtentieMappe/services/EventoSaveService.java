@@ -29,7 +29,7 @@ public class EventoSaveService {
                 evento.setNomevento(dto.getNomevento());
                 evento.setLatitudine(Double.parseDouble(dto.getLatitudine()));
                 evento.setLongitudine(Double.parseDouble(dto.getLongitudine()));
-
+                evento.setAccessibilità(dto.getAccessibilità());
                 /* Salvataggio oggetto evento sul database tramite repository */
                 eventoRepository.save(evento);
             }

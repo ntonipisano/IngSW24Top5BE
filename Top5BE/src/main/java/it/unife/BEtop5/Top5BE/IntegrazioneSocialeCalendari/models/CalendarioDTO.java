@@ -17,4 +17,5 @@ public class CalendarioDTO {
     private String nomevento;
     private String descrizionevento;
     private String dataevento;
+    private String orarioevento;
 }

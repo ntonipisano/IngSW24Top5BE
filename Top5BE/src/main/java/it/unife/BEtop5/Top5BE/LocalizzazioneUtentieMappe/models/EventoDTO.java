@@ -17,4 +17,5 @@ public class EventoDTO {
     private String nomevento;
     private String latitudine;
     private String longitudine;
+    private String accessibilità;
 }

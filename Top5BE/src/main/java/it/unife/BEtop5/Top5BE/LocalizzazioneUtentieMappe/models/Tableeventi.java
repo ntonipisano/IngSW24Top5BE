@@ -26,4 +26,5 @@ public class Tableeventi {
     private String nomevento;
     private double latitudine;
     private double longitudine;
+    private String accessibilità;
 }

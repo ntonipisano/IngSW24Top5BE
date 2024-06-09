@@ -26,6 +26,8 @@ public class Tablecalendari {
     private String nomevento;
     private String descrizionevento;
     private String dataevento;
+    private String orarioevento;
+
 
     /* Metodo setDescrizionevento*/ 
     public void setDescrizonevento(String descrizionevento) {

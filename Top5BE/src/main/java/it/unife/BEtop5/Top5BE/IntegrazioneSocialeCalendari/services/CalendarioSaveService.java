@@ -29,6 +29,8 @@ public class CalendarioSaveService {
                 calendario.setNomevento(dto.getNomevento());
                 calendario.setDescrizonevento(dto.getDescrizionevento());
                 calendario.setDataevento(dto.getDataevento());
+                calendario.setOrarioevento(dto.getOrarioevento());
+
 
                 /* Salvataggio oggetto calendario sul database tramite repository */
                 calendarioRepository.save(calendario);
